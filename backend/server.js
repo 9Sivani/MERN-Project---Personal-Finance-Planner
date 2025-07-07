@@ -15,6 +15,10 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/finance", financeRoutes);
 
+app.get("/", (req, res) => {
+  res.send("🚀 Backend is running!");
+});
+
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`)))
