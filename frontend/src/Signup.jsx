@@ -10,7 +10,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/signup", form);
+      const res = await axios.post("http://mern-project-personal-finance-planner.onrender.com/api/auth/signup", form);
       setMessage(res.data.msg);
     } catch (err) {
       setMessage(err.response?.data?.msg || "Signup failed");
